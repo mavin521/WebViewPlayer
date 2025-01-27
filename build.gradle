@@ -4,8 +4,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.0'  // Gradle 构建工具
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'  // 如果用 Kotlin
+        classpath 'com.android.tools.build:gradle:7.0.3'  // 降级到 7.0.3，较为稳定
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'  // 保持 Kotlin 插件版本
     }
 }
 
