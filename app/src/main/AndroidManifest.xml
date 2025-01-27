@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.webviewvideoplayer">
 
     <!-- 权限声明 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,12 +10,16 @@
 
     <application
         android:allowBackup="true"
-        android:label="WebView Video Player">
-        
+        android:label="WebView Video Player"
+        android:icon="@mipmap/ic_launcher"  <!-- 可以根据需要设置应用图标 -->
+        android:theme="@style/Theme.WebViewPlayer"> <!-- 根据需要指定主题 -->
+
         <!-- 主Activity声明 -->
-        <activity android:name=".MainActivity"
+        <activity 
+            android:name=".MainActivity"
             android:label="WebView Video Player"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:exported="true"> <!-- 添加 android:exported 属性 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
