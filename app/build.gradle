@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.webviewvideoplayer'  // 添加 namespace
-    compileSdkVersion 31  // 修改为 SDK 31，符合 Google Play 的要求
+    compileSdkVersion 31  // SDK 版本
 
     defaultConfig {
         applicationId "com.example.webviewvideoplayer"
         minSdkVersion 21
-        targetSdkVersion 31  // 修改为 SDK 31，符合 Google Play 的要求
+        targetSdkVersion 31  // 目标 SDK 版本
         versionCode 1
         versionName "1.0"
     }
@@ -20,6 +20,17 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    // 设置 Java 版本为 Java 8
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8  // 设置为 Java 8
+        targetCompatibility JavaVersion.VERSION_1_8  // 设置为 Java 8
+    }
+
+    // Kotlin 配置（如果你使用 Kotlin）
+    kotlinOptions {
+        jvmTarget = "1.8"  // 设置 Kotlin 使用 Java 8
     }
 }
 
