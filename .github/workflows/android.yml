@@ -31,7 +31,7 @@ jobs:
         sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle  # 创建新的符号链接
 
     - name: Build with Gradle (without gradle wrapper)
-      run: gradle clean assembleRelease --stacktrace  # 使用本地 Gradle 进行构建
+      run: gradle clean assembleRelease --stacktrace --debug  # 更详细的调试日志
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
