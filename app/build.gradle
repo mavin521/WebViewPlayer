@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.webviewvideoplayer'  // 添加 namespace
-    compileSdkVersion 30
+    compileSdkVersion 31  // 修改为 SDK 31，符合 Google Play 的要求
 
     defaultConfig {
         applicationId "com.example.webviewvideoplayer"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31  // 修改为 SDK 31，符合 Google Play 的要求
         versionCode 1
         versionName "1.0"
     }
