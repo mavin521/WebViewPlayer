@@ -24,13 +24,13 @@ android {
 
     // 设置 Java 版本为 Java 8
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8  // 设置为 Java 8
-        targetCompatibility JavaVersion.VERSION_1_8  // 设置为 Java 8
+        sourceCompatibility JavaVersion.VERSION_11  // 设置为 Java 11
+        targetCompatibility JavaVersion.VERSION_11  // 设置为 Java 11
     }
 
     // Kotlin 配置（如果你使用 Kotlin）
     kotlinOptions {
-        jvmTarget = "1.8"  // 设置 Kotlin 使用 Java 8
+        jvmTarget = "11"  // 设置 Kotlin 使用 Java 11
     }
 }
 
