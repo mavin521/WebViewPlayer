@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.webviewvideoplayer">
 
+    <!-- 网络权限，允许应用访问互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 存储权限，允许应用写入和读取设备存储 (针对旧设备或下载缓存视频) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:label="WebView Video Player">
