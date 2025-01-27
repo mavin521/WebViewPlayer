@@ -24,17 +24,17 @@ jobs:
 
     - name: Install Gradle
       run: |
-        wget https://services.gradle.org/distributions/gradle-8.0-bin.zip  # 下载指定版本的 Gradle
-        unzip gradle-8.0-bin.zip  # 解压 Gradle
-        sudo mv gradle-8.0 /opt/gradle  # 移动到 /opt/gradle 目录
+        wget https://services.gradle.org/distributions/gradle-7.0.3-bin.zip  # 下载指定版本的 Gradle
+        unzip gradle-7.0.3-bin.zip  # 解压 Gradle
+        sudo mv gradle-7.0.3 /opt/gradle  # 移动到 /opt/gradle 目录
         sudo rm -f /usr/bin/gradle  # 删除现有的 gradle 符号链接
         sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle  # 创建新的符号链接
 
     - name: Build with Gradle (without gradle wrapper)
-      run: gradle assembleRelease  # 直接使用安装的 gradle
+      run: gradle clean assembleRelease --stacktrace  # 使用本地 Gradle 进行构建
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
         name: app-release.apk
-        path: app/build/outputs/apk/release/app-release.apk
+        path: app/build/outputs/apk/release/app-release.apk  # 确保路径正确
