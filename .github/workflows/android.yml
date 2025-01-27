@@ -19,7 +19,7 @@ jobs:
     - name: Setup JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '8'  # 将 Java 版本修改为 8
+        java-version: '11'  # 将 Java 版本修改为 11
         distribution: 'zulu'
 
     - name: Install Gradle
