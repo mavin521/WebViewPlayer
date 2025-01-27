@@ -30,11 +30,8 @@ jobs:
         sudo rm -f /usr/bin/gradle  # 删除现有的 gradle 符号链接
         sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle  # 创建新的符号链接
 
-    - name: Grant execute permission for Gradle Wrapper
-      run: chmod +x ./gradlew
-
-    - name: Build with Gradle
-      run: ./gradlew assembleRelease
+    - name: Build with Gradle (without gradle wrapper)
+      run: gradle assembleRelease  # 直接使用安装的 gradle
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
