@@ -7,10 +7,15 @@
     <!-- 存储权限，允许应用写入和读取设备存储 (针对旧设备或下载缓存视频) -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 对于 Android 10 以上的设备，支持存储权限兼容性 -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:label="WebView Video Player">
+        android:label="WebView Video Player"
+        android:requestLegacyExternalStorage="true"  <!-- 处理旧设备的存储问题 -->
+        android:usesCleartextTraffic="true"> <!-- 支持 HTTP 流量 -->
+        
         <activity
             android:name=".MainActivity"
             android:exported="true">
