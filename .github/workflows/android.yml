@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:  # 允许手动触发工作流
 
 jobs:
   build:
@@ -17,19 +16,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Grant execute permission for Gradle Wrapper and jar
-      run: |
-        chmod +x ./gradlew
-        chmod +x ./gradle/wrapper/gradle-wrapper.jar  # 确保 gradle-wrapper.jar 文件有执行权限
-
     - name: Setup JDK
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'zulu'
 
+    - name: Install Gradle
+      run: |
+        wget https://services.gradle.org/distributions/gradle-7.6-bin.zip
+        unzip gradle-7.6-bin.zip
+        sudo mv gradle-7.6 /opt/gradle
+        sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle
+
     - name: Build with Gradle
-      run: ./gradlew assembleRelease
+      run: gradle assembleRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v3
