@@ -4,7 +4,9 @@ plugins {
 }
 
 android {
+    namespace 'com.example.webviewvideoplayer'  // 添加 namespace
     compileSdkVersion 30
+
     defaultConfig {
         applicationId "com.example.webviewvideoplayer"
         minSdkVersion 21
