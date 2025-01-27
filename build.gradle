@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.3'  // 降级到 7.0.3，较为稳定
+        classpath 'com.android.tools.build:gradle:7.0.2'  // 降级到 7.0.3，较为稳定
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'  // 保持 Kotlin 插件版本
     }
 }
