@@ -24,9 +24,9 @@ jobs:
 
     - name: Install Gradle
       run: |
-        wget https://services.gradle.org/distributions/gradle-7.0.3-bin.zip  # 下载指定版本的 Gradle
-        unzip gradle-7.0.3-bin.zip  # 解压 Gradle
-        sudo mv gradle-7.0.3 /opt/gradle  # 移动到 /opt/gradle 目录
+        wget https://services.gradle.org/distributions/gradle-7.0.2-bin.zip  # 下载指定版本的 Gradle
+        unzip gradle-7.0.2-bin.zip  # 解压 Gradle
+        sudo mv gradle-7.0.2 /opt/gradle  # 移动到 /opt/gradle 目录
         sudo rm -f /usr/bin/gradle  # 删除现有的 gradle 符号链接
         sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle  # 创建新的符号链接
 
