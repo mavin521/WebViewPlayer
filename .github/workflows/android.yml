@@ -17,8 +17,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Grant execute permission for Gradle Wrapper
-      run: chmod +x ./gradlew   # 确保 gradlew 文件有执行权限
+    - name: Grant execute permission for Gradle Wrapper and jar
+      run: |
+        chmod +x ./gradlew
+        chmod +x ./gradle/wrapper/gradle-wrapper.jar  # 确保 gradle-wrapper.jar 文件有执行权限
 
     - name: Setup JDK
       uses: actions/setup-java@v3
