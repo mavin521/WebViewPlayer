@@ -31,7 +31,9 @@ jobs:
         sudo ln -s /opt/gradle/bin/gradle /usr/bin/gradle  # 创建新的符号链接
 
     - name: Grant execute permission for Gradle Wrapper
-      run: chmod +x ./gradlew
+      run: |
+        chmod +x ./gradlew  # 确保 gradlew 文件可执行
+        chmod +x ./gradle/wrapper/gradle-wrapper.jar  # 确保 gradle-wrapper.jar 可执行
 
     - name: Build with Gradle
       run: ./gradlew assembleRelease
